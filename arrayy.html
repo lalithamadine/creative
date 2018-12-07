@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <script>
+              var myArr = ["A","B","C","D","E","F","G"];       
+              function addElement()
+              {
+                  var txt = document.getElementById('txt').value;
+                  myArr.push(txt);
+                  document.getElementById('pgh').innerHTML = myArr;
+              }
+              
+              function deleteElement()
+              {
+                   var txt = document.getElementById('txt').value;
+                   
+                   var index = myArr.indexOf(txt);
+                   if(index !== -1 )
+                   {
+                       myArr.splice(index,1);
+                       document.getElementById('pgh').innerHTML = myArr;
+                   }
+                   
+                   else{
+                       alert("Not Found");
+                   }
+              }
+         
+        </script>
+
+    </head>
+    <body>        
+        <input type="text" name="txt" id="txt"/>
+        <p id="pgh"></p>
+
+        <button onclick="addElement();">Push</button>
+        <button onclick="deleteElement();"> Delete</button>
+
+        <script>
+                      document.getElementById('pgh').innerHTML = myArr;
+        </script>
+
+
+    </body>
+</html>
